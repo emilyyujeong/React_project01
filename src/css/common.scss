@@ -1,0 +1,77 @@
+.Header {
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    color: #333;
+    align-items: center;
+    height: 100px;
+
+    .inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1 {
+        padding-right: 270px;
+    }
+
+    h1 img {
+        width: 150px;
+    }
+
+    .right {
+        display: flex;
+        gap: 15px;
+        font-size: 23px;
+        background: transparent;
+    }
+}
+
+
+
+
+.GlobalGnb {
+    &>ul {
+        display: flex;
+        gap: 30px;
+
+        &>li {
+            line-height: 100px;
+        }
+
+        ul {
+            display: none;
+            position: absolute;
+            inset: 100px auto auto 50%;
+            transform: translate(-50%, -20px);
+            line-height: 40px;
+
+            width: 150px;
+            text-align: center;
+            border: 3px solid #333;
+            background: #fcf9ee;
+
+            li~li {
+                border-top: 1px solid #ddd;
+            }
+        }
+
+        &>li {
+            position: relative;
+            font-size: 13px;
+
+            &:hover ul {
+                display: block;
+            }
+
+            a {
+                display: block;
+            }
+
+            z-index: 999;
+        }
+    }
+}

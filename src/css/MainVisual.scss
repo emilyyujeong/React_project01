@@ -1,0 +1,122 @@
+.MainVisual {
+    position: relative;
+
+
+    .itm {
+        position: relative;
+        height: 850px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .inner>* {
+            transform: translate(0, 100px);
+            opacity: 0;
+            transition-duration: 0.5s;
+        }
+
+        &.on .inner>* {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+
+        .inner {
+            position: absolute;
+
+            inset: 50% auto auto 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+
+
+            h2 {
+                font-size: 50px;
+                font-weight: 700;
+                margin: 0 0 10px 0;
+                transition-delay: 0.5s;
+            }
+
+            p {
+                font-size: 14px;
+                margin: 0 0 20px 0;
+                font-weight: 700;
+                text-shadow: 0 0 1px #fff;
+            }
+        }
+    }
+
+    @for $i from 1 to 5 {
+        @if($i==1) {
+            .itm0#{$i} .inner {
+                text-align: end;
+            }
+        }
+
+
+        .itm0#{$i} {
+            background-image: url(../../public/assets/mainvisual0#{$i}.jpg);
+        }
+    }
+
+    .dots {
+        position: absolute;
+        bottom: 70px;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        display: flex;
+        gap: 4px;
+
+        li button {
+            font-size: 0;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+
+            border: none;
+            outline: none;
+        }
+
+        li.on button {
+            background: #000000;
+        }
+    }
+
+    .arrows>* {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        font-size: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+
+        width: 100px;
+        height: 100px;
+
+
+        &.prev {
+            margin: 0 0 0 -700px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        &.next {
+            margin: 0 0 0 700px;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-right: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+    }
+
+    .tab {
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        transform: translate(-100%, 0);
+        margin: 0 0 0 600px;
+        color: #fff;
+    }
+
+}
